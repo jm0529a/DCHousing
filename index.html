@@ -12,15 +12,15 @@
    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
 
 <div class="heading">
-  <p id="heading">Nearly all subsidized affordable housing built, preserved or planned since 2015 is east of Rock Creek Park</p></div>
+  <p id="heading">Nearly all subsidized affordable housing built, preserved or planned since 2015 is east of Rock Creek</p></div>
   <div class="chatter">
-  <p id="chatter">Click the buttons to show or hide ward outlines and affordable housing locations </p></div>
+  <p id="chatter">Click the buttons to show or hide ward outlines and affordable housing locations </p><hr></div>
 
   </head>
   <style type="text/css">
   	#mapid {
-  		height: 800px;
-  		width: 610px;
+  		height: 795px;
+  		width: 620px;
         float:left;
         margin-right: 10px;
         margin-top: 15px;
@@ -29,18 +29,19 @@
   	}
 
     body {
-        width:930px;
+        width:650px;
     }
 
     p {
-        font-family: interstate;
+        font-family: helvetica;
+
         /*width: 700px;*/
 
     }
 
     .heading {
         display: inline;
-        font-family: interstate;
+        font-family: helvetica;
         font-size: 30px;
         font-weight: bold;
         letter-spacing: -0.09rem;
@@ -48,41 +49,51 @@
     }
     #heading {
         display: inline;
-        font-family: interstate;
-        font-size: 30px;
+        font-family: helvetica;
+        font-size: 27px;
         font-weight: bold;
-        letter-spacing: -0.09rem;
+        letter-spacing: -0.1rem;
         width: 500px;
     }
 
 
     .chatter {
-        font-family: interstate;
-        font-size: 20px;
+        font-family: helvetica;
+        font-size: 17px;
     }
     #chatter {
-        font-family: interstate;
-        font-size: 20px;
+        font-family: helvetica;
+        font-size: 17px;
         margin-top: 10px;
-        margin-bottom
+        margin-bottom: 1px;
+    }
+
+    .buttons {
+    	margin-left: 180px;
     }
 
     #wardsbutton {
-        margin-left: 200px;
+        margin-left: 10px;
         background-color: #6a51a3;
         color: white;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: bold;
-        font-family: interstate;
-        padding: 5px;
+        font-family: helvetica;
+        padding: 4px;
     }
     #housingbutton {
         background-color: #A37E26;
         color: white;
         font-size: 16px;
-        font-family: interstate;
+        font-family: helvetica;
         font-weight: bold;
-        padding: 5px;
+        padding: 4px;
+        margin-right: 1px;
+    }
+
+    .legends {
+    	float: left;
+
     }
 
     .dot {
@@ -112,13 +123,10 @@
     .chorounits {
         stroke: black;
         stroke-width: 2px;
-        font-family: interstate
+        font-family: helvetica
 
     }
-    .legend {
-        margin-right: 20px;
-
-    }
+   
 
     /*h3 {
         margin-top: 15px;
@@ -126,16 +134,20 @@
 
     .units {
         margin-left: 10px;
-        vertical-align: right; 
+        /*vertical-align: right; */
         margin: 0 !important;
-        font-family: interstate;
+        font-family: helvetica;
         font-weight: bold;
+        float: left;
+        margin-right: 5px;
+
     }
 
     .ten { background: #A37E26;
         height: 4px;
         width: 4px;
-        
+        margin-top: 35px;
+
         border-radius: 2px;
         display: inline-block;
 
@@ -143,7 +155,9 @@
     .fifty { background: #A37E26;
         height: 6px;
         width: 6px;
-        
+        margin-top: 28px;
+
+        margin-left: 125px;
         border-radius: 3px;
         display: inline-block;
 
@@ -151,9 +165,10 @@
     .onefifty { background: #A37E26;
         height: 12px;
         width: 12px;
-        
+        margin-top: 23px;
         border-radius: 6px;
         display: inline-block;
+        margin-left: 5px;
 
      }
      .twoseventyfive {
@@ -162,14 +177,58 @@
         background-color: #A37E26;
         border-radius: 50px;
         display: inline-block; 
+        margin-top: 18px;
+        margin-left: 5px;
 
      }
+
+     .info {
+        padding: 6px 8px;
+        font: 20px helvetica neue, sans-serif;
+        background: white;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 5px;
+    }
+    .info h4 {
+         margin: 0 0 5px;
+        color: #777;
+}
+	
+	.legend {
+   		 line-height: 18px;
+    	color: #555;
+}
+	.legend i {
+   	 width: 18px;
+   	 height: 18px;
+    	float: left;
+    	margin-right: 8px;
+    	opacity: 0.7;
+}
+
+	.circlelegend {
+   		 line-height: 18px;
+    	color: #555;
+    	/*border-radius: 15px;*/
+}
+	.circlelegend i {
+   	 width: 18px;
+   	 height: 18px;
+   	 border-radius: 30px;
+    	float: left;
+    	margin-right: 8px;
+    	opacity: 0.7;
+}
+
      .fivefifty {
-        height: 30px;
-        width: 30px;
+        height: 26px;
+        width: 26px;
         background-color: #A37E26;
-        border-radius: 15px;
+        border-radius: 13px;
         display: inline-block;
+        margin-top: 9px;
+        margin-left: 5px;
 
      }
 
@@ -221,41 +280,39 @@
         background-color: #4a1486;
      }
 
-    .tooltip {
-        position: absolute;
-        text-align: left;
-        width: 80px;
-        height: 50px;
-        padding: 2px;
-        margin-top: 3px;
-        color: black;
-        font: 10px interstate;
-        pointer-events: none;
-    }
+    
   </style>
 
   <body>
   	
-  	<hr>
+  	
    
-<div><button id='wardsbutton'>Wards</button>
+<div class="buttons"><button id='wardsbutton'>Wards</button>
     <button id='housingbutton'>Affordable Housing Units</button></div>
+    <div class="legends">
+        <!-- <div class="legends"> <p class="units"><span class="dot ten"></span>  10 Units  </p></div> -->
+        <div class="legends"> <p class="units"><span class="dot fifty"></span>  50 Units</p></div>
+        <div class="legends"> <p class="units"><span class="dot onefifty"></span>  150 Units</p></div>
+        <div class="legends"> <p class="units"><span class="dot twoseventyfive"></span>  275 Units</p></div>
+        <div class="legends"> <p class="units"><span class="dot fivefifty"></span>  550 Units</p></div>
+
+  </body>
 <div id="mapid">
+
    
 </div>
 
-  </body>
 
   <script type="text/javascript">
   	var au = new L.LatLng(38.8933, -77.0134);
   	var wardsLayer;
   	var drawWards = true;
   	var drawHousing = true;
-  	var mymap = L.map('mapid').setView(au, 12.4);
+  	var mymap = L.map('mapid').setView(au, 11.5);
   		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-   					maxZoom: 20,
-   					minZoom: 3,
+   					maxZoom: 19,
+   					minZoom: 7,
    					id: 'mapbox.light',
    					accessToken: 'pk.eyJ1IjoiZnVlbGVkYnlqYW1lcyIsImEiOiJjanJ6YXF2N2gwZGExNDNzanh1NjU5cDcxIn0.sW-EvvnXLAI5cNKOgobvBw'
 				}).addTo(mymap);
@@ -270,14 +327,12 @@
     			.append("svgLayer")
     			.attr("stroke", "black")
 				.attr("fill", "aliceblue")
-				.on("mouseover", function(){return tooltip.style("visibility", "visible");})
-				.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-				.on("mouseout", function(){return tooltip.style("visibility", "	hidden");});
+				
 
 
     	Promise.all([
     		d3.csv('housing.csv'),
-    		d3.json('housingami.geojson')
+    		d3.json('housingaminew.geojson')
     		])
     		
             .then(ready);
@@ -296,13 +351,6 @@
     		.rangeRound([2,15])
     		console.log(nodeRadius)
 
-    		var tooltip = d3.select("body")
-                .data(nodes)
-                .append("div")
-                .style("z-index", "10")
-                .style("visibility", "hidden")
-                .attr("class", "tooltip")
-
     		g.selectAll('circle')
     			.data(nodes)
     			.enter().append('circle')
@@ -314,16 +362,7 @@
     				.attr('r', function(d){
     					return nodeRadius(d.TOTAL_AFFORDABLE_UNITS)
     				})
-                    .on("mouseover.tooltip", function(d){
-                        d3.selectAll(".Units")
-                    })
-                        .text(function(d){
-                            tooltip.style("visibility", "visible")
-                                return "simple tooltip"
-                        })
-                    .on("mouseout", function(){
-                        return tooltip.style("visibility", "hidden")
-                    })
+                    
 
 
     		nodes.forEach(function(d){
@@ -366,6 +405,8 @@
     				return d['TOTAL_AFFORDABLE_UNITS']
     			})
     			.entries(data[0])
+
+
     				
     		console.log(nestedData)
 
@@ -400,37 +441,65 @@
     				.attr('cy', function(d){return mymap.latLngToLayerPoint(d.LatLng).y})
     		}
 
+            function onEachFeature(feature, layer){
+                layer.on({
+                    mouseover: highlightFeature,
+                    mouseout: resetHighlight,
+                    click: zoomToFeature
+                })
+            }
+
+            wardsLayer = L.geoJson(data[1],{
+                style: statestyle,
+                onEachFeature: onEachFeature
+            }).addTo(mymap);
+
             // var hue = d3.scaleSequential(d3.interpolatePurples)
             //     .domain([0, 5000])
                 
-    		function getColor(d){
-    			return d > 4248 ? '#4a1486' :
-            d > 3776  ? '#6a51a3' :
-            d > 3400  ? '#807dba' :
-            d > 2332  ? '#bcbddc' :
-            d > 2086  ? '#9e9ac8' :
-            d > 1630   ? '#dadaeb' :
-            d > 768   ? '#efedf5' :
-            d > 74   ? '#fcfbfd' :
+    		// var wardsLayer;
+
+            function getColor(d){
+    			return d > 4354 ? '#4a1486' :
+            d > 3983  ? '#6a51a3' :
+            d > 3543  ? '#807dba' :
+            d > 2604  ? '#9e9ac8' :
+            d > 2293  ? '#bcbddc' :
+            d > 1617   ? '#dadaeb' :
+            d > 770   ? '#efedf5' :
+            d > 110   ? '#fcfbfd' :
                         '#fcfbfd';
     		}
-    		// var magma = d3.scaleSequential(d3.interpolateMagma)
-    		// 	.domain(d3.extent(nestedData))
+    		
+            function highlightFeature(e){
+                var layer = e.target;
 
-    		// var blues = d3.scaleSequential(d3.interpolateBlues)
-    		// .domain([111,4249])
-    		// var hue = d3.scaleLinear()
-      //           .domain(d3.extent(wards.features.map(function(d){
-      //               return d.properties.ID.sum
-      //           })))	
-      //           .range([1,0])
-      //       function getColor(d){
-      //               return d3.interpolateMagma(hue(d))
-      //           }
+                layer.setStyle({
+                    weight: 3,
+                    color: 'gold',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                    layer.bringToFront();
+                }
+                info.update(layer.feature.properties);
+            }
+
+            function resetHighlight(e){
+                wardsLayer.resetStyle(e.target);
+                info.update();
+            }
+
+            function zoomToFeature(e){
+                mymap.fitBounds(e.target.getBounds());
+            }
+
 
     		function statestyle(feature) {
                 // var wc = getColor(feature.properties.ID.sum)
-    			var sum = feature.properties.sum;
+    			var sum = feature.properties['affordable units'];
                 console.log(sum);
                 var wc = getColor(sum);
                 return {
@@ -438,13 +507,75 @@
     				opacity: 1,
     				color: 'grey',
     				dashArray: '3',
-    				fillOpacity: 0.5,
+    				fillOpacity: 0.3,
     				// fillColor: wc
     				fillColor: wc
                          //getColor(wc)
     				// fillColor: getColor(nestedData)
     			}
     		}
+
+            var info = L.control();
+
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+
+            info.update = function (props) {
+                this._div.innerHTML =  (props ? '<b>' + props.NAME + '<br />' + "Affordable units: " + props['affordable units'] + '<br />' +  props['percent of total'] + "% of total" 
+        : 'Hover over a ward' + '</b>') 
+
+            }
+            info.addTo(mymap);
+
+            var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [111, 771, 1618, 2294, 2605, 3544, 3984, 4355],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' 
+            +
+            grades[i] + (grades[i + 1] ? ' units'  + '<br>' : ' units');
+    }
+
+    return div;
+};
+
+legend.addTo(mymap);
+
+// var circlelegend = L.control({position: 'bottomleft'});
+// var nodeRadius = d3.scaleLinear()
+//     		.domain(d3.extent(nodes.map(function(d){
+//     			return +d.TOTAL_AFFORDABLE_UNITS
+//     		})))
+//     		.rangeRound([2,15])
+
+// circlelegend.onAdd = function (map) {
+
+//     var div = L.DomUtil.create('div', 'info circlelegend'),
+//         grades = [10, 54, 150, 275, 5500],
+//         labels = [];
+
+//     // loop through our density intervals and generate a label with a colored square for each interval
+//     for (var i = 0; i < grades.length; i++) {
+//         div.innerHTML +=
+//             '<i style="background:' + '#A37E26' + '" </i> ' + '<i style="border-radius:' + nodeRadius() + '"></i>' +
+//             grades[i] + (grades[i + 1] ? '' + '<br>' : '+');
+//     }
+
+//     return div;
+// };
+
+// circlelegend.addTo(mymap);
+
     	}
 
 
@@ -461,45 +592,41 @@
     			drawHousing = !drawHousing
     		})
 
-    	d3.select('#wardsbutton')
-            .on('click', function (){
-                if(drawWards){
-                    wardsLayer.addTo(mymap)
-                }
-                else{
-                    mymap.removeLayer(wardsLayer)
-                }
-                drawWards = !drawWards
-            })
 
-      //   d3.select('#wardsbutton')
-    		// .on('click', function (){
-    		// 	if(drawWards){
-    		// 		mymap.removeLayer(wardsLayer)
-    		// 	}
-    		// 	else{
-    		// 		wardsLayer.addTo(mymap)
-    		// 	}
-    		// 	drawWards = !drawWards
-    		// })
+    	// d3.select('#wardsbutton')
+     //        .on('click', function (){
+     //            if(drawWards){
+     //                wardsLayer.addTo(mymap);
+     //            }
+     //            else{
+     //                mymap.removeLayer(wardsLayer)
+     //            }
+     //            drawWards = !drawWards
+     //        })
+
+        d3.select('#wardsbutton')
+    		.on('click', function (){
+    			if(drawWards){
+    				mymap.removeLayer(wardsLayer)
+    			}
+    			else{
+    				wardsLayer.addTo(mymap)
+    			}
+    			drawWards = !drawWards
+    		})
 
   </script>
-  <div class="legend">
-        <div class="legend"> <p class="units"><span class="dot ten"></span>  10 Units</p></div>
-        <div class="legend"> <p class="units"><span class="dot fifty"></span>  50 Units</p></div>
-        <div class="legend"> <p class="units"><span class="dot onefifty"></span>  150 Units</p></div>
-        <div class="legend"> <p class="units"><span class="dot twoseventyfive"></span>  275 Units</p></div>
-        <div class="legend"> <p class="units"><span class="dot fivefifty"></span>  550 Units</p></div>
+  
 
         
-        <div class="chorolegend"> <p class="chorounits"><span class="chorodot hundred"></span>  <b>Ward 3:</b> 111 units; < 1% of total</p></div>
+       <!--  <div class="chorolegend"> <p class="chorounits"><span class="chorodot hundred"></span>  <b>Ward 3:</b> 111 units; < 1% of total</p></div>
         <div class="chorolegend"> <p class="chorounits"><span class="chorodot thousand"></span>  <b>Ward 2:</b> 771 units; 4% of total</p></div>
         <div class="chorolegend"> <p class="chorounits"><span class="chorodot twothousand"></span>  <b>Ward 1:</b> 1,618 units; 8% of total</p></div>
         <div class="chorolegend"> <p class="chorounits"><span class="chorodot twentythreehundred"></span>  <b>Ward 4:</b> 2,294 units; 12% of total</p></div>
         <div class="chorolegend"> <p class="chorounits"><span class="chorodot twentyfivehundred"></span>  <b>Ward 5:</b> 2,605 units; 14% of total</p></div>
         <div class="chorolegend"> <p class="chorounits"><span class="chorodot thirtyfivehundred"></span>  <b>Ward 7:</b> 3,544 units; 18% of total</p></div>
         <div class="chorolegend"> <p class="chorounits"><span class="chorodot fourthousand"></span> <b> Ward 6:</b> 3,984 units; 21% of total</p></div>
-        <div class="chorolegend"> <p class="chorounits"><span class="chorodot fortyfivehundred"></span>  <b>Ward 8:</b> 4,355 units; 23% of total</p></div>
+        <div class="chorolegend"> <p class="chorounits"><span class="chorodot fortyfivehundred"></span>  <b>Ward 8:</b> 4,355 units; 23% of total</p></div> -->
 
 
 
