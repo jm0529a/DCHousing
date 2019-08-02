@@ -3,6 +3,7 @@
 <head>
 	<title>DC Affordable Housing Map</title>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
   	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
    crossorigin=""/>
@@ -345,7 +346,8 @@
     			.append("svgLayer")
     			.attr("stroke", "black")
 				.attr("fill", "aliceblue")
-				
+		
+		var pymChild = new pym.Child();	
 
 
     	Promise.all([
@@ -649,7 +651,7 @@ legend.addTo(mymap);
 <div>
 	<div class="wrapper">
 <svg id="tags" height="20px" width="620px" style="font-family: helvetica">
-<text x="0" y="15" style="font-size: 11px">Source: D.C.'s affordable housing &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   Graphic by James Marshall<br>&nbsp; &nbsp; &nbsp; database on opendata.dc.gov </text>
+<text x="0" y="15" style="font-size: 11px">Source: D.C.'s affordable housing &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   James Marshall/The DC Line<br>&nbsp; &nbsp; &nbsp; database on opendata.dc.gov </text>
 </svg>
 </div>
 </div>
